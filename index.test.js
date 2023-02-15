@@ -14,7 +14,17 @@ describe('Band and Musician Models', () => {
 
     test('can create a Band', async () => {
         // TODO - test creating a band
-        expect('NO TEST').toBe('EXPECTED VALUE HERE');
+        let test1 = Band.create({
+            name: "test1",
+            instrument: "drums"
+        })
+        const foundBand = Band.findAll({
+            where: {
+                name: "test1",
+                instrument: "drums"
+            }
+        });
+        expect(foundBand).toBe(test1, 'drums');
     })
 
     test('can create a Musician', async () => {
